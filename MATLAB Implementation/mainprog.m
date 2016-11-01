@@ -8,36 +8,26 @@ clear all;
 [y,fs] = audioread('E:\GaTech\GTCMT\Fall 2016\7100\Untouchable Chords.wav');
 audio = y(250000:450000,:);
 
+% t=0:(1/44100):3;
+% audio=sin(2*pi*2000*t) + sin(2*pi*4000*t);% + (1/3)*sin(2*pi*12000*t) %+ (1/4)*sin(2*pi*16000*t);
+% fs=44100;
+
 figure;
 spectrogram(audio(:,2),hamming(1024),512,1024,fs,'yaxis'); %Plot spectrogram of original signal
 ax = caxis;
 title('Original signal');
 %%
 %Function to band limit the audio signal
-alim = blimit(audio(:,2),fs,ax); 
+alim = bLimit(audio(:,2),fs,ax); 
 %Inputs - audio sample, sampling frequency, spectrogram axis for reference
 %Output - band limited audio
 %%
-%Function to generate the highest octave in the signal
-afilt1 = filt1(alim,fs,ax);
+%Bandwidth Extension using a half or full wave rectifier as the NLD
+%component
+afin = rectFunc(alim,fs,ax);
 %Inputs - band limited audio, sampling frequency, spectrogram axis for
-%reference
-%Output - Signal after the first bandpass filter
+%reference 
+%Output - final reconstructed audio
 %%
-%Function to generate harmonics using a NLD
-anld = hargen(afilt1,fs,ax);
-%Inputs - highest octave of audio signal, sampling frequency, spectrogram
-%axis for reference
-%Output - Signal after generating harmonics
-%%
-%Function to filter high frequency content
-afilt2 = filt2(anld,fs,ax);
-%Inputs - signal after NLD, sampling frequency, spectrogram axis for
-%reference
-%Output - signal with only high frequency content
-%%
-%Function to add high frequency content to band limited audio
-afin = sigadd(afilt2,alim,fs,ax);
-%Inputs - signal with only high frequency content, band limited audio,
-%sampling frequency, spectrogram axis for reference
-%Output - final bandwidth extended audio
+%Time Plotting section
+timePlot(audio(:,2),alim,afin);

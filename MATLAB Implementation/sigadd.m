@@ -4,7 +4,7 @@
 %Inputs - signal with only high frequency content, band limited audio,
 %sampling frequency, spectrogram axis for reference
 %Output - final bandwidth extended audio
-function afin = sigadd(afilt2,alim,fs,ax)
+function afin = sigAdd(afilt2,alim,fs,ax)
 
 afin = alim + afilt2;
 

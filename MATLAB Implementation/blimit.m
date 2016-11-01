@@ -3,7 +3,7 @@
 
 %Inputs - audio sample, sampling frequency, spectrogram axis for reference
 %Output - band limited audio
-function [alim] = blimit(audio,fs,ax)
+function [alim] = bLimit(audio,fs,ax)
 
 
 d = designfilt('lowpassfir', 'PassbandFrequency', (fs/4), ...
