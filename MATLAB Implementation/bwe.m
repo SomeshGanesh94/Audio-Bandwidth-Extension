@@ -26,7 +26,7 @@ switch(bwemethod)
     case 3
         afilt1 = ufilt(alim,fs,ax);
         anld = fwr(afilt1,fs,ax);
-        afilt2 = ufilt2(alim,fs,ax);
+        afilt2 = ufilt2(anld,fs,ax);
         afin2 = sigAdd(afilt2,alim,fs,ax);
         afin = normalizeIntensityLevel(afin2, fs);
         %             audiowrite('FWR.wav',afin,fs);
