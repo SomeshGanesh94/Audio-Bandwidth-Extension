@@ -52,19 +52,13 @@ alim = bLimit(audio,fs,ax);
 %Function for bandwidth extension
 afin = bwe(alim,fs,ax);
 
-listeninput = input('\nWhich track do you want to listen to?\n1)Original\n2)Bandlimited\n3)BWE output\4)Exit\nEnter your choice here: ');
+listeninput = input('\nWhich track do you want to listen to?\n1)Original\n2)Bandlimited\n3)BWE output\nEnter your choice here: ');
 
-while(listeninput != 4)
-    switch listeninput
-        case 1
-            soundsc(audio,fs);
-        case 2
-            soundsc(alim,fs);
-        case 3
-            soundsc(afin,fs);
-        case 4
-            break;
-        otherwise
-            print('\nInvalid choice, please try again');
-    end
+switch listeninput
+    case 1
+        soundsc(audio,fs);
+    case 2
+        soundsc(alim,fs);
+    case 3
+        soundsc(afin,fs);
 end
