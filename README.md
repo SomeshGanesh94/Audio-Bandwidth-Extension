@@ -1,14 +1,18 @@
-# Audio-Bandwidth-Extension
+# Audio-Bandwidth-Extension, GTCMT Fall 2016
 
-This research project aims at studying and finding a suitable method to implement audio bandwidth extension.
+This research project aims at studying and finding a suitable method to implement audio bandwidth extension to bandlimited audio files.
 
-The MATLAB implementation folder has a mainProg.m file which accesses all the various function .m files in the folder.
+The MATLAB implementation folder has a mainProgam.m file which accesses all the various functions in the folder.
 
-The current module generates harmonics using a half wave or full wave rectifier.
+The module generates harmonics using a half wave or full wave rectifier with two techniques.
 
-1) bLimit.m band limits the incoming audio
-2) rectFunc.m implements functions 3, 4, 5 and 6 to perform Bandwidth extension (BWE)
-3) filt1.m extracts the highest octave in the signal
-4) harGen.m generates higher harmonics in the signal
-5) filt2.m extracts only the required high frequency information
-6) sigAdd.m adds the band limited audio and the high frequency content
+1) bLimit.m band limits audio to generate the dataset (bandlimited audio file)
+2) bwe.m is a wrapper for the different functions performed for bandwidth extension
+3) fwr.m performs full wave rectification
+4) hwr.m performs half wave rectification
+5) normalizeIntensityLevel normalizes the audio files to a given rms value
+6) sfilt.m performs the first filter action in the subband filtering technique
+7) sfilt2.m performs the second filter action to extract high frequency content in the subband filtering technique
+8) sigAdd.m adds the band limited audio and the high frequency content
+9) ufilt.m performs the first filter action to extract the highest octave present in the badnlimited audio
+10) ufilt2.m performs the second filter action to extract high frequency content
