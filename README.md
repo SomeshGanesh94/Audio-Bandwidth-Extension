@@ -5,6 +5,7 @@ This research project aims at studying and finding a suitable method to implemen
 The MATLAB implementation folder has a mainProgam.m file which accesses all the various functions in the folder.
 
 The module generates harmonics using a half wave or full wave rectifier with two techniques.
+The detailed algorithm, experiments, results and discussion can be found in the [7100_Fall_2016_paper.pdf](https://github.com/SomeshGanesh94/Audio-Bandwidth-Extension/blob/master/7100%20Fall%202016%20paper.pdf) file.
 
 1) bLimit.m band limits audio to generate the dataset (bandlimited audio file)
 2) bwe.m is a wrapper for the different functions performed for bandwidth extension
