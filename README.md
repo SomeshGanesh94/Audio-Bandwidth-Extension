@@ -1,6 +1,6 @@
 # Audio-Bandwidth-Extension, GTCMT Fall 2016
 
-This research project aims at studying and finding a suitable method to implement audio bandwidth extension to bandlimited audio files.
+This research project aims at studying and finding a suitable method to implement audio bandwidth extension to bandlimited audio files. The idea is to reconstruct the missing high frequency spectrum in bandlimited audio/music using a couple of non-linear processes (rectification) along with some filtering techniques to reduce distortion.
 
 The MATLAB implementation folder has a mainProgam.m file which accesses all the various functions in the folder.
 
